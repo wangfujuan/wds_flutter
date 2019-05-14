@@ -65,19 +65,24 @@ class _Login extends State<Login> {
                           labelText: '请输入手机号',
                           labelStyle: new TextStyle( fontSize: 15.0, color: Color.fromARGB(255, 93, 93, 93)),
                           border: InputBorder.none,
-                          suffixIcon: new IconButton(
-                            icon: new Icon(
-                              Icons.close,
-                              color: Color.fromARGB(255, 126, 126, 126), 
-                            ),
-                            onPressed: () {
+                          // suffixIcon: new IconButton(
+                          //   icon: new Icon(
+                          //     Icons.close,
+                          //     color: Color.fromARGB(255, 126, 126, 126), 
+                          //   ),
+                          //   onPressed: () {
                               
-                            },
-                          ),
+                          //   },
+                          // ),
                         ),
                         keyboardType: TextInputType.phone,
                         onSaved: (value) {
                           userName = value;
+                        },
+                        validator: (phone) {
+                          // if(phone.length == 0){
+                          //   return '请输入手机号';
+                          // }
                         },
                         onFieldSubmitted: (value) {
 
@@ -100,7 +105,7 @@ class _Login extends State<Login> {
                           border: InputBorder.none,
                           suffixIcon: new IconButton(
                             icon: new Icon(
-                              Icons.remove_red_eye,
+                              isShowPassWord ? Icons.visibility : Icons.visibility_off,
                               color: Color.fromARGB(255, 126, 126, 126), 
                             ),
                             onPressed: showPassWord,
